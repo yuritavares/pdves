@@ -1,0 +1,2 @@
+class Dve < ApplicationRecord
+end
