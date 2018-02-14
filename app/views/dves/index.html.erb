@@ -1,15 +1,45 @@
-<%= select_date(@date, {}, onchange: 'reload_with_date($(this))') %>
+<div class="row">
+  <span class="app-title">DveCalculator</span>
+  <div class="card form">
+    <div class="row">
+      <%= form_tag(new_dfe_path, :method => "get") do %>
+        <div class="input-field">
+          <%= label_tag "Selecione a data"%>
+          <%= text_field_tag :event_date, params[:event_date], class: 'datepicker' %>
+        </div>
+        <div class="submit">
+          <%= submit_tag "Cadastrar DVE", class: 'waves-effect waves-light btn' %>
+        </div>  
+      <% end %>
+    </div>
+  </div>
+   <div class="card inner-padding">
+    <div class="row">
+      <div class="dves col s6">
+        <h6>DVE:</h6>
+      </div>
+      <div class="he col s6">
+        <h6>H.E:</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="days col s6 center-align">
+        <span>18 Dias</span>
+        <hr>
+      </div>
+      <div class="he-quantity col s6 center-align">
+        <span>26</span>
+        <hr>        
+      </div>
+    </div>
+    <div class="row">
+      <div class="dve-value col s6 center-align negative-padding-top">
+        <span>R$ 320,00</span>
+      </div>
+      <div class="he-value col s6 center-align negative-padding-top">
+        <span>R$ 420,00</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= javascript_tag do %>
-  # this function will get the date selected
-  # and reload the page with the params[:date]
-  window.reload_with_date = function(select_tag) {
-    var date = Date.parse( $(select_tag).val() ); # get the selected date
-    var current_url = window.location.href; # get the current URL
-    if(current_url.indexOf('?') > -1) { # if already GET params in URL
-      window.location.href = current_url += '&date=' + date.toString();
-    } else { 
-      window.location.href = current_url += '?date=' + date.toString();
-    }
-  }
-<% end %>

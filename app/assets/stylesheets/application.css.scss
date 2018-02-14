@@ -1,10 +1,10 @@
         @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-    @import "materialize/components/color";
-    $primary-color: color("gray", "lighten-2") !default;
-    $secondary-color: color("red", "base") !default;
-    @import "materialize";
-    @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
-    /*
+        @import "materialize/components/color";
+        $primary-color: color("gray", "lighten-2") !default;
+        $secondary-color: color("red", "base") !default;
+        @import "materialize";
+        @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
+        /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -20,55 +20,75 @@
  *= require_self
  */
 
-    html,
-    body {
-        height: 100%;
-    }
+        hr {
+            width: 90px;
+            border: 1px solid red;
+        }
 
-    html {
-        display: table;
-        margin: auto;
-    }
+        h6 {
+            color: rgb(236, 100, 90);
+            font-family: "Roboto", sans-serif;
+        }
 
-    body {
-        display: table-cell;
-        vertical-align: middle;
-    }
+        html,
+        body {
+            height: 100%;
+        }
 
-    .app-title {
-        font-family: 'Orbitron', sans-serif;
-        color: #d1d1d1;
-    }
+        html {
+            display: table;
+            margin: auto;
+        }
 
-    .form {
-        width: 400px;
-        padding: 20px;
-    }
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
 
-    .btn {
-        left: 80px;
-    }
+        .app-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #d1d1d1;
+        }
 
-    .input-field label {
-        left: 124px;
-    }
+        .form {
+            width: 400px;
+            padding: 20px;
+        }
 
-    .materialize-textarea {
-        color: #d1d1d1;
-    }
+        .btn {
+            left: 80px;
+        }
 
-input:not([type]),
-input[type=text]:not(.browser-default),
-input[type=password]:not(.browser-default),
-input[type=email]:not(.browser-default),
-input[type=url]:not(.browser-default),
-input[type=time]:not(.browser-default),
-input[type=date]:not(.browser-default),
-input[type=datetime]:not(.browser-default),
-input[type=datetime-local]:not(.browser-default),
-input[type=tel]:not(.browser-default),
-input[type=number]:not(.browser-default),
-input[type=search]:not(.browser-default),
-textarea.materialize-textarea {
-    border-bottom: 1px solid #d1d1d1;
-}
+        .input-field label {
+            left: 124px;
+        }
+
+        .materialize-textarea {
+            color: #d1d1d1;
+        }
+
+        input:not([type]),
+        input[type=text]:not(.browser-default),
+        input[type=password]:not(.browser-default),
+        input[type=email]:not(.browser-default),
+        input[type=url]:not(.browser-default),
+        input[type=time]:not(.browser-default),
+        input[type=date]:not(.browser-default),
+        input[type=datetime]:not(.browser-default),
+        input[type=datetime-local]:not(.browser-default),
+        input[type=tel]:not(.browser-default),
+        input[type=number]:not(.browser-default),
+        input[type=search]:not(.browser-default),
+        textarea.materialize-textarea {
+            border-bottom: 1px solid #d1d1d1;
+            color: #c2c0c0;
+            text-align: center;
+        }
+
+        .negative-padding-top {
+            margin-top: -20px;
+        }
+
+        .inner-padding {
+            padding: 20px;
+        }
