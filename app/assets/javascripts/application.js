@@ -16,3 +16,4 @@
 //= require_tree .
 //= require materialize
 //= require materialize-sprockets
+//= require materialize-form
