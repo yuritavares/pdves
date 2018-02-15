@@ -1,0 +1,23 @@
+<span class="app-title">DveCalculator</span>
+<div class="card form">
+  <%= simple_form_for @dve do |f| %>
+
+  <div class="row">
+    <%= f.text_field :event_date, class:'col s4', placeholder: 'Data do evento'%>
+    <%= f.text_field :event_name, class: 'col s7 offset-s1', placeholder: 'Nome do evento'%>
+  </div>
+  
+  <div class="row">
+  
+    <%= f.text_field :start_day, class: 'timepicker col s5', placeholder: 'Inicio do evento' %>
+    <%= f.text_field :end_day, class: 'timepicker col s5 offset-s2', placeholder: 'Fim do evento' %>
+  </div>  
+
+  <div class="row">
+    <%= f.input :overnight, wrapper_html: { class: 'm6 col s12' } %>
+    <%= button_tag  class:'waves-effect waves-light btn col s6' do %>
+      Adcionar Dve <i class="material-icons left">add</i>
+    <% end %>
+  </div>  
+  <% end %>
+</div>
