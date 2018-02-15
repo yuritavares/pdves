@@ -4,10 +4,10 @@
     <div class="row">
       <%= form_tag(new_dfe_path, :method => "get") do %>
         <div class="input-field">
-          <%= date_field :event_date, params[:event_date], class: 'datepicker' %>
+          <%= date_field :event_date, params[:event_date], class: 'datepicker validate', required:'required' %>
         </div>
         <div class="submit">
-          <%= submit_tag "Cadastrar DVE", class: 'waves-effect waves-light btn' %>
+          <%= submit_tag "Cadastrar DVE", class: 'waves-effect waves-light btn  btn-left' %>
         </div>  
       <% end %>
     </div>
