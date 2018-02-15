@@ -10,21 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212152345) do
+ActiveRecord::Schema.define(version: 20180215154312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dves", force: :cascade do |t|
     t.string "event_name"
-    t.datetime "event_date"
-    t.datetime "start_day"
-    t.datetime "end_day"
-    t.integer "total_hours"
-    t.integer "ex_time"
+    t.date "event_date"
+    t.time "start_day"
+    t.time "end_day"
     t.boolean "overnight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "second_start"
+    t.time "second_end"
+    t.integer "day_kind"
+    t.decimal "total"
   end
 
 end
