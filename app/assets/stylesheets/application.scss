@@ -1,0 +1,92 @@
+        @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+        @import "materialize/components/color";
+        $primary-color: color("gray", "lighten-2") !default;
+        $secondary-color: color("red", "base") !default;
+        @import "materialize";
+        @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
+        /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+        hr {
+            width: 90px;
+            border: 1px solid red;
+        }
+
+        h6 {
+            color: rgb(236, 100, 90);
+            font-family: "Roboto", sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .app-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #d1d1d1;
+        }
+
+        .form {
+            width: 400px;
+            padding: 20px;
+        }
+
+        .btn-left {
+            left: 80px;
+        }
+
+        
+
+        .materialize-textarea {
+            color: #d1d1d1;
+        }
+
+        input:not([type]),
+        input[type=text]:not(.browser-default),
+        input[type=password]:not(.browser-default),
+        input[type=email]:not(.browser-default),
+        input[type=url]:not(.browser-default),
+        input[type=time]:not(.browser-default),
+        input[type=date]:not(.browser-default),
+        input[type=datetime]:not(.browser-default),
+        input[type=datetime-local]:not(.browser-default),
+        input[type=tel]:not(.browser-default),
+        input[type=number]:not(.browser-default),
+        input[type=search]:not(.browser-default),
+        textarea.materialize-textarea {
+            border-bottom: 1px solid #d1d1d1;
+            color: #c2c0c0;
+            text-align: center;
+        }
+
+        .negative-padding-top {
+            margin-top: -20px;
+        }
+
+        .inner-padding {
+            padding: 20px;
+        }
