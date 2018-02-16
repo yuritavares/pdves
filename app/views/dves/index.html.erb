@@ -13,6 +13,7 @@
     </div>
   </div>
    <div class="card inner-padding">
+   <span class="month-name"><%= Date.current.strftime("%B")%> </span>
     <div class="row">
       <div class="dves col s6">
         <h6>DVE:</h6>
@@ -23,7 +24,7 @@
     </div>
     <div class="row">
       <div class="days col s6 center-align">
-        <span>18 Dias</span>
+        <span><%= @total_count %> Dias</span>
         <hr>
       </div>
       <div class="he-quantity col s6 center-align">
@@ -33,7 +34,7 @@
     </div>
     <div class="row">
       <div class="dve-value col s6 center-align negative-padding-top">
-        <span>R$ 320,00</span>
+        <span>R$ <%= @total_month %></span>
       </div>
       <div class="he-value col s6 center-align negative-padding-top">
         <span>R$ 420,00</span>

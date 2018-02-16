@@ -1,5 +1,8 @@
 class DvesController < ApplicationController
   def index
+    @month_dves = Dve.where('event_date >= ? AND event_date <= ?', Date.today.beginning_of_month, Date.today.end_of_month)
+    @total_month = @month_dves.sum(:total).to_f
+    @total_count = @month_dves.count
   end
 
   def new
@@ -22,6 +25,6 @@ class DvesController < ApplicationController
 
   private
     def dve_params
-      params.require(:dve).permit(:event_name, :event_date, :start_day, :end_day, :overnight)
+      params.require(:dve).permit(:event_name, :event_date, :start_day, :end_day, :overnight, :day_kind)
     end
 end
