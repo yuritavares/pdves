@@ -34,6 +34,10 @@ class DvesController < ApplicationController
     @dve = Dve.find(params[:id])
   end
 
+  def edit
+    @dve = Dve.find_by(params)
+  end
+
   private
     def dve_params
       params.require(:dve).permit(:event_name, :event_date, :start_day, :end_day, :overnight, :day_kind, :second_start, :second_end)

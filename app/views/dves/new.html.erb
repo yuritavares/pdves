@@ -1,6 +1,13 @@
 <span class="app-title">DveCalculator</span>
 <div class="card form">
-  <%= simple_form_for @dve do |f| %>
+
+<% if @existing_dve %>
+  <div class="message">
+    Já existe uma dve para esta data. Deseja editá-la?  <%= link_to "Clique aqui", edit_dfe_path(@existing_dve, dve: {visible: :true}) %>
+  </div>
+<% end %>
+
+<%= simple_form_for @dve do |f| %>
 
   <div class="row">
     <%= f.text_field :event_date, class:'col s4', placeholder: 'Data do evento'%>
@@ -8,14 +15,22 @@
   </div>
   
   <div class="row">
-  
     <%= f.text_field :start_day, class: 'timepicker col s5', placeholder: 'Inicio do evento' %>
     <%= f.text_field :end_day, class: 'timepicker col s5 offset-s2', placeholder: 'Fim do evento' %>
+  </div>
+
+  <div class="row">
+    <%= f.text_field :second_start, class: 'timepicker col s5', placeholder: 'Segunda Entrada' %>
+    <%= f.text_field :second_end, class: 'timepicker col s5 offset-s2', placeholder: 'Segunda saida' %>
   </div>  
 
   <div class="row">
+    <%= f.input :day_kind, prompt: "Tipo do dia", class: 'col s12 offset-s1' %>
+  </div>
+
+  <div class="row">
     <%= f.input :overnight, wrapper_html: { class: 'm6 col s12' } %>
-    <%= button_tag  class:'waves-effect waves-light btn col s6' do %>
+    <%= button_tag  class:'waves-effect waves-light btn col s6', id: 'add-dve' do %>
       Adcionar Dve <i class="material-icons left">add</i>
     <% end %>
   </div>  
