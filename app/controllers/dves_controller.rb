@@ -12,6 +12,17 @@ class DvesController < ApplicationController
 
   def create
     @dve = Dve.new(dve_params)
+    
+    # antes de salvar uma nova dve, tenta encontrar uma outra com a mesma data que vc mandou nos parametros
+    @existing_dve = Dve.find_by(event_date: dve_params[:event_date])
+    
+    # se por acaso existir, manda um render new pra renderizar a view do formulário
+    if @existing_dve
+      render :new
+      return
+    end
+
+    @dve = Dve.new(dve_params)
     if @dve.save
       redirect_to @dve, notice: 'Dve criada com sucesso!'
     else
@@ -25,6 +36,6 @@ class DvesController < ApplicationController
 
   private
     def dve_params
-      params.require(:dve).permit(:event_name, :event_date, :start_day, :end_day, :overnight, :day_kind)
+      params.require(:dve).permit(:event_name, :event_date, :start_day, :end_day, :overnight, :day_kind, :second_start, :second_end)
     end
 end
