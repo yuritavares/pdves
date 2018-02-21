@@ -59,8 +59,6 @@
             left: 80px;
         }
 
-        
-
         .materialize-textarea {
             color: #d1d1d1;
         }
@@ -94,4 +92,16 @@
         .month-name {
             color: rgb(122, 122, 122);
             top: -10px;
+        }
+        /* show stuff */
+
+        .details-board {
+            width: 470px;
+            height: auto;
+            .row {
+                padding-left: 20px;
+            }
+            span {
+                color: rgb(236, 100, 90);
+            }
         }
