@@ -7,7 +7,7 @@ class DvesController < ApplicationController
 
   def new
     @dve = Dve.new
-    @dve.event_date = params[:event_date]
+    @dve.event_date = event_date_formated = params[:event_date].to_s
   end
 
   def create
