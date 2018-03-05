@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
-//= require materialize
+//= materialize-datepicker.config
 //= require materialize-sprockets
 //= require materialize-form

@@ -1,4 +1,3 @@
-<span class="app-title">DveCalculator</span>
 <div class="card form">
 
 <% if @existing_dve %>
@@ -11,27 +10,28 @@
 <%= simple_form_for @dve do |f| %>
 
   <div class="row">
-    <%= f.text_field :event_date_formatted,  class:'col s5', placeholder: 'Data do evento'%>
-    <%= f.text_field :event_name, class: 'col s5 offset-s2', placeholder: 'Nome do evento'%>
+    <%= f.input :event_date %>
+    <%= f.input :event_name %>
   </div>
 
   <div class="row">
-    <%= f.text_field :start_day, class: 'timepicker col s5', placeholder: 'Inicio do evento' %>
-    <%= f.text_field :end_day, class: 'timepicker col s5 offset-s2', placeholder: 'Fim do evento' %>
+    <%= f.input :start_day %>
+    <%= f.input :end_day %>
   </div>
 
   <div class="row">
-    <%= f.text_field :second_start, class: 'timepicker col s5', placeholder: 'Segunda Entrada' %>
-    <%= f.text_field :second_end, class: 'timepicker col s5 offset-s2', placeholder: 'Segunda saida' %>
+    <%= f.input :second_start %>
+    <%= f.input :second_end %>
   </div>
 
   <div class="row">
-    <%= f.input :day_kind, prompt: "Tipo do dia", class: 'col s12 offset-s1' %>
+    <%= f.input :day_kind %>
   </div>
 
   <div class="row">
-    <%= f.input :overnight, wrapper_html: { class: 'm6 col s12' } %>
-    <%= button_tag  class:'waves-effect waves-light btn col s6', id: 'add-dve' do %>
+    <%= f.input :overnight %>
+
+    <%= button_tag class: 'waves-effect waves-light btn col s6', id: 'add-dve' do %>
       Adcionar Dve <i class="material-icons left">add</i>
     <% end %>
   </div>
