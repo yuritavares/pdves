@@ -12,9 +12,10 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer', platforms: :ruby
-gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'simple'
 gem 'materialize-sass'
+gem 'simple_form'
 gem 'materialize-form'
 gem 'enum_help'
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
