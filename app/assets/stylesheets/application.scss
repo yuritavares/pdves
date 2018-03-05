@@ -4,6 +4,7 @@
         $secondary-color: color("red", "base") !default;
         @import "materialize";
         @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
+        @import 'dves'
         /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,95 +20,3 @@
  *= require_tree .
  *= require_self
  */
-
-        hr {
-            width: 90px;
-            border: 1px solid rgb(236, 100, 90);
-            ;
-        }
-
-        h6 {
-            color: rgb(236, 100, 90);
-            font-family: "Roboto", sans-serif;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
-        html {
-            display: table;
-            margin: auto;
-        }
-
-        body {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .app-title {
-            font-family: 'Orbitron', sans-serif;
-            color: #d1d1d1;
-        }
-
-        .form {
-            width: 500px;
-            padding: 20px;
-        }
-
-        .btn-left {
-            left: 80px;
-        }
-
-        .materialize-textarea {
-            color: #d1d1d1;
-        }
-
-        input:not([type]),
-        input[type=text]:not(.browser-default),
-        input[type=password]:not(.browser-default),
-        input[type=email]:not(.browser-default),
-        input[type=url]:not(.browser-default),
-        input[type=time]:not(.browser-default),
-        input[type=date]:not(.browser-default),
-        input[type=datetime]:not(.browser-default),
-        input[type=datetime-local]:not(.browser-default),
-        input[type=tel]:not(.browser-default),
-        input[type=number]:not(.browser-default),
-        input[type=search]:not(.browser-default),
-        textarea.materialize-textarea {
-            border-bottom: 1px solid #d1d1d1;
-            color: #c2c0c0;
-            text-align: center;
-        }
-
-        .negative-padding-top {
-            margin-top: -20px;
-        }
-
-        .inner-padding {
-            padding: 20px;
-        }
-
-        .month-name {
-            color: rgb(122, 122, 122);
-            top: -10px;
-        }
-        /* show stuff */
-
-        .details-board {
-            width: 470px;
-            height: auto;
-            .row {
-                padding-left: 20px;
-            }
-            span {
-                color: rgb(236, 100, 90);
-            }
-        }
-
-        .show-red-bar {
-            width: auto;
-            margin-left: -15px;
-        }

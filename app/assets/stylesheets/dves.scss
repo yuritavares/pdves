@@ -1,3 +1,88 @@
-// Place all the styles related to the dves controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+    @import url('https://fonts.googleapis.com/css?family=Orbitron');
+    /* VARIABLES */
+
+    $orbitron: 'Orbitron',
+    sans-serif;
+    $light-gray: #d1d1d1;
+    /* END VARIABLES */
+    /* TO CENTER */
+
+    .container {
+        margin-top: 4%;
+    }
+    /* END TO CENTER*/
+    /* APPLICATION */
+
+    .app-title a {
+        text-decoration: none;
+        color: $light-gray;
+        font-family: $orbitron;
+        font-size: 14px;
+    }
+    /* END APPLICATION */
+    /* INDEX 
+     FIRST CARD STUFF */
+
+    .input-field {
+        width: 220px;
+        margin: 0 auto;
+        input[type="text"]:not(.browser-default),
+        textarea.materialize-textarea {
+            color: $light-gray;
+            border-bottom: 1px solid red;
+            text-align: center;
+        }
+    }
+
+    .submit {
+        text-align: center;
+        padding: 5px 0 25px 0;
+    }
+
+    .card {
+        .card-content {
+            padding: 20px;
+        }
+    }
+    /* END FIRST CARD STUFF */
+    /* SECOND CARD STUFF */
+
+    .select-wrapper input.select-dropdown {
+        border-bottom: 1px solid red;
+        text-align: center;
+        color: $light-gray;
+    }
+
+    .select-wrapper span.caret {
+        color: $light-gray;
+    }
+
+    .section {
+        .he-dve-titles {
+            color: red;
+        }
+        .dve-he-values {
+            color: $light-gray;
+            text-align: center;
+            hr {
+                border-top: 1px solid red;
+            }
+        }
+    }
+
+    .row {
+        .month-details {
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+    /* END SECOND CARD STUFF */
+
+    .less-margin-bottom {
+        margin-bottom: -10px;
+    }
+
+    .zero-margin-padding-bottom {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
