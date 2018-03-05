@@ -4,14 +4,23 @@
     <title>Dvecalculator</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <div class="row less-margin-bottom">
+        <div class="app-title col l5 offset-l4 m6 offset-m3 s12"> 
+          <%= link_to  'DveCalculator', root_path %>
+        </div>
+      </div>
+      
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>

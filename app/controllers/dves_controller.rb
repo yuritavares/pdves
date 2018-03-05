@@ -1,22 +1,27 @@
 class DvesController < ApplicationController
   def index
-    @month_dves = Dve.where('event_date >= ? AND event_date <= ?', Date.today.beginning_of_month, Date.today.end_of_month)
-    @total_month = @month_dves.sum(:total).to_f
-    @total_count = @month_dves.count
-  end
+    # @month_dves = Dve.where('event_date >= ? AND event_date <= ?', Date.today.beginning_of_month, Date.today.end_of_month)
+    # @total_month = @month_dves.sum(:total).to_f
+    # @total_count = @month_dves.count
+     
+     @month = params[:date].blank? ? Date.today.month : params[:date][:month]
+     print @month
+     @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
+     end_of_month = @beginning_of_month.end_of_month
+     @month_dves = Dve.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month)
+     @total_month = @month_dves.sum(:total).to_f
+     @total_count = @month_dves.count
+   end
 
   def new
     @dve = Dve.new
-    @dve.event_date = event_date_formated = params[:event_date].to_s
+    @dve.event_date = params[:event_date]
   end
 
   def create
     @dve = Dve.new(dve_params)
-
-    # antes de salvar uma nova dve, tenta encontrar uma outra com a mesma data que vc mandou nos parametros
     @existing_dve = Dve.find_by(event_date: dve_params[:event_date])
-
-    # se por acaso existir, manda um render new pra renderizar a view do formulário
+    
     if @existing_dve
       render :new
       return
