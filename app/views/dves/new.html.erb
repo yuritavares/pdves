@@ -1,40 +1,61 @@
-<div class="card form">
+<div class="row">
+  <div class="col l7 offset-l3 m8 offset-m2 s12">
+    <div class="card">
+      <div class="card-content">
+        <%= simple_form_for @dve do |f| %>
+          
+          <div class="row">
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :event_date %>
+            </div>
+          
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :event_name %>
+            </div>
+          </div>
 
-<% if @existing_dve %>
-  <div class="message">
-    Já existe uma dve para esta data. Deseja editá-la?
-    <%= link_to "Clique aqui", edit_dfe_path(@existing_dve, dve: {visible: :true}) %>
+          <div class="row">
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :start_day %>
+            </div>
+
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :end_day %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :second_start %>
+            </div>
+
+            <div class="input-field col l6 m6 s12">
+              <%= f.input :second_end %>
+            </div>
+          </div>
+
+            <div class="row">
+              <div class="input-field col l6 m6 s12">
+                <%= f.input :day_kind %>
+              </div>
+              
+              <div class="switch col l5 offset-l1 m6 s12">
+                <%= f.input :overnight %>
+              </div>
+            </div>
+          <div class="row">
+            <div class="submit col l12 m12 s12">
+              <%= button_tag class: 'waves-effect waves-light btn', id: 'add-dve' do %>
+                Adcionar Dve <i class="material-icons left">add</i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <%= link_to 'Voltar', root_path %>
+        <div class="already-exists">
+          <%= render 'if_dve_exists' %>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= simple_form_for @dve do |f| %>
-
-  <div class="row">
-    <%= f.input :event_date %>
-    <%= f.input :event_name %>
-  </div>
-
-  <div class="row">
-    <%= f.input :start_day %>
-    <%= f.input :end_day %>
-  </div>
-
-  <div class="row">
-    <%= f.input :second_start %>
-    <%= f.input :second_end %>
-  </div>
-
-  <div class="row">
-    <%= f.input :day_kind %>
-  </div>
-
-  <div class="row">
-    <%= f.input :overnight %>
-
-    <%= button_tag class: 'waves-effect waves-light btn col s6', id: 'add-dve' do %>
-      Adcionar Dve <i class="material-icons left">add</i>
-    <% end %>
-  </div>
-  <% end %>
-  <%= link_to 'Voltar', root_path %>
 </div>

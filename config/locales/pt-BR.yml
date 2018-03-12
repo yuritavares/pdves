@@ -4,6 +4,12 @@ pt-BR:
       dve: dve
     attributes:
       dve:
+        start_day: Entrada
+        end_day: Saida
+        second_start: Segunda entrada
+        second_end: Segunda saida
+        event_name: Nome do evento
+        event_date: Data do evento
         overnight: Pernoite
         day_kind: Tipo do dia
   event_date: '%d/%m/%Y - %A'

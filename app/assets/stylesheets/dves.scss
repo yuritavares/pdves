@@ -5,19 +5,23 @@
     sans-serif;
     $light-gray: #d1d1d1;
     /* END VARIABLES */
+
     /* TO CENTER */
 
     .container {
         margin-top: 4%;
     }
     /* END TO CENTER*/
+    
     /* APPLICATION */
 
-    .app-title a {
-        text-decoration: none;
-        color: $light-gray;
-        font-family: $orbitron;
-        font-size: 14px;
+    .app-title {       
+        a {
+            text-decoration: none;
+            color: $light-gray;
+            font-family: $orbitron;
+            font-size: 14px;
+         }
     }
     /* END APPLICATION */
     /* INDEX 
@@ -86,3 +90,14 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
+
+    /* NEW */
+       .switch {
+            margin-top: 20spx;
+        }
+
+        .already-exists {
+            text-align: center;
+            color: red;
+        }
+    /* END NEW */
