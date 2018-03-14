@@ -1,103 +1,137 @@
-    @import url('https://fonts.googleapis.com/css?family=Orbitron');
-    /* VARIABLES */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body {
+    background: url('bg.jpg')
+}
 
-    $orbitron: 'Orbitron',
-    sans-serif;
-    $light-gray: #d1d1d1;
-    /* END VARIABLES */
 
-    /* TO CENTER */
+/* VARIABLES */
 
-    .container {
-        margin-top: 4%;
+$orbitron: 'Orbitron',
+sans-serif;
+$light-gray: #b3b3b3;
+
+/* END VARIABLES */
+
+
+/* TO CENTER */
+
+.container {
+    margin-top: 50px;
+}
+
+
+/* END TO CENTER*/
+
+
+/* APPLICATION */
+
+.app-title {
+    padding: 15px 0 0 15px;
+    a {
+        text-decoration: none;
+        color: $light-gray;
+        font-family: $orbitron;
+        font-size: 14px;
     }
-    /* END TO CENTER*/
-    
-    /* APPLICATION */
+}
 
-    .app-title {       
-        a {
-            text-decoration: none;
-            color: $light-gray;
-            font-family: $orbitron;
-            font-size: 14px;
-         }
-    }
-    /* END APPLICATION */
-    /* INDEX 
+
+/* END APPLICATION */
+
+
+/* INDEX 
      FIRST CARD STUFF */
 
-    .input-field {
-        width: 220px;
-        margin: 0 auto;
-        input[type="text"]:not(.browser-default),
-        textarea.materialize-textarea {
-            color: $light-gray;
-            border-bottom: 1px solid red;
-            text-align: center;
-        }
-    }
-
-    .submit {
-        text-align: center;
-        padding: 5px 0 25px 0;
-    }
-
-    .card {
-        .card-content {
-            padding: 20px;
-        }
-    }
-    /* END FIRST CARD STUFF */
-    /* SECOND CARD STUFF */
-
-    .select-wrapper input.select-dropdown {
+.input-field {
+    width: 220px;
+    margin: 0 auto;
+    input[type="text"]:not(.browser-default),
+    textarea.materialize-textarea {
+        color: $light-gray;
         border-bottom: 1px solid red;
         text-align: center;
+    }
+    input[type="text"]::placeholder {
         color: $light-gray;
     }
+}
 
-    .select-wrapper span.caret {
+.submit {
+    text-align: center;
+    padding: 5px 0 25px 0;
+}
+
+.card {
+    .card-content {
+        padding: 20px;
+    }
+}
+
+
+/* END FIRST CARD STUFF */
+
+
+/* SECOND CARD STUFF */
+
+.select-wrapper input.select-dropdown {
+    border-bottom: 1px solid red;
+    text-align: center;
+    color: $light-gray;
+}
+
+.select-wrapper span.caret {
+    color: $light-gray;
+}
+
+.section {
+    .he-dve-titles {
+        color: red;
+    }
+    .dve-he-values {
         color: $light-gray;
-    }
-
-    .section {
-        .he-dve-titles {
-            color: red;
-        }
-        .dve-he-values {
-            color: $light-gray;
-            text-align: center;
-            hr {
-                border-top: 1px solid red;
-            }
+        text-align: center;
+        hr {
+            border-top: 1px solid red;
         }
     }
+}
 
-    .row {
-        .month-details {
-            text-align: center;
-            margin-top: 30px;
-        }
+.row {
+    .month-details {
+        text-align: center;
+        margin-top: 30px;
     }
-    /* END SECOND CARD STUFF */
+}
 
-    .less-margin-bottom {
-        margin-bottom: -10px;
-    }
 
-    .zero-margin-padding-bottom {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
+/* END SECOND CARD STUFF */
 
-    /* NEW */
-       .switch {
-            margin-top: 20spx;
-        }
+.less-margin-bottom {
+    margin-bottom: -10px;
+}
 
-        .already-exists {
-            text-align: center;
-            color: red;
-        }
-    /* END NEW */
+.zero-margin-padding-bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+/* NEW */
+
+.switch {
+    margin-top: 20spx;
+}
+
+.already-exists {
+    text-align: center;
+    color: red;
+}
+
+
+/* END NEW */
+
+
+/* SHOW */
+
+
+/* END SHOW */
