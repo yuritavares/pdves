@@ -4,6 +4,9 @@
       <div class="app-title "> 
         <%= link_to  'DveCalculator', root_path %>
       </div>
+      <div class="already-exists">
+          <%= render 'if_dve_exists' %>
+        </div>
       <div class="card-content">
         <%= simple_form_for @dve do |f| %>
           
@@ -55,9 +58,6 @@
           </div>
         <% end %>
         <%= link_to 'Voltar', root_path %>
-        <div class="already-exists">
-          <%= render 'if_dve_exists' %>
-        </div>
       </div>
     </div>
   </div>

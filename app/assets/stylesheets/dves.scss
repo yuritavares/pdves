@@ -4,27 +4,36 @@ body {
 }
 
 
-/* VARIABLES */
+/* SHARED THINGS */
 
+%flash-shared {
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 6px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+/* END SHARED THINGS*/
+
+/* VARIABLES */
 $orbitron: 'Orbitron',
 sans-serif;
 $light-gray: #b3b3b3;
 
 /* END VARIABLES */
 
-
 /* TO CENTER */
-
 .container {
     margin-top: 50px;
 }
 
-
 /* END TO CENTER*/
 
-
 /* APPLICATION */
-
 .app-title {
     padding: 15px 0 0 15px;
     a {
@@ -34,14 +43,19 @@ $light-gray: #b3b3b3;
         font-size: 14px;
     }
 }
-
+.notice {
+    @extend %flash-shared;
+    background-color: lightblue;
+}
+.alert {
+    @extend %flash-shared;
+    background-color: lightcoral;
+}
 
 /* END APPLICATION */
 
-
 /* INDEX 
      FIRST CARD STUFF */
-
 .input-field {
     width: 220px;
     margin: 0 auto;
@@ -51,42 +65,37 @@ $light-gray: #b3b3b3;
         border-bottom: 1px solid red;
         text-align: center;
     }
+
     input[type="text"]::placeholder {
         color: $light-gray;
     }
 }
-
 .submit {
     text-align: center;
     padding: 5px 0 25px 0;
 }
-
 .card {
     .card-content {
         padding: 20px;
     }
 }
 
-
 /* END FIRST CARD STUFF */
 
-
 /* SECOND CARD STUFF */
-
 .select-wrapper input.select-dropdown {
     border-bottom: 1px solid red;
     text-align: center;
     color: $light-gray;
 }
-
 .select-wrapper span.caret {
     color: $light-gray;
 }
-
 .section {
     .he-dve-titles {
         color: red;
     }
+
     .dve-he-values {
         color: $light-gray;
         text-align: center;
@@ -95,7 +104,6 @@ $light-gray: #b3b3b3;
         }
     }
 }
-
 .row {
     .month-details {
         text-align: center;
@@ -103,35 +111,29 @@ $light-gray: #b3b3b3;
     }
 }
 
-
 /* END SECOND CARD STUFF */
-
 .less-margin-bottom {
     margin-bottom: -10px;
 }
-
 .zero-margin-padding-bottom {
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-
 /* NEW */
-
 .switch {
     margin-top: 20spx;
 }
-
 .already-exists {
     text-align: center;
     color: red;
 }
 
-
 /* END NEW */
 
-
 /* SHOW */
-
+.field-label {
+    color: red;
+}
 
 /* END SHOW */

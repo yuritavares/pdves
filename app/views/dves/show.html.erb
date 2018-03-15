@@ -1,49 +1,46 @@
 <div class="row">
-  <div class="col l6 m6 offset-m3 s12">
+  <div class="col l6 offset-l3 m6 offset-m3 s12">
     <div class="card">
       <div class="app-title "> 
         <%= link_to  'DveCalculator', root_path %>
       </div>
       <div class="card-content">
-       <div class="row">
-          <div class="col m6 s8 offset-s4">
-            <span>Evento:</span> <%= @dve.event_name %>
+        <div class="row">
+          <div class="col m6 s6">
+            <span class="field-label">Evento:</span> <%= @dve.event_name %>
           </div>
-          
-          <div class="col m6 s8 offset-s4">
-            <span>Entrada:</span> <%= @dve.start_day.strftime("%H:%M") %>
+          <div class="col m6 s6">
+            <span class="field-label">Data:</span> <%= I18n.l(@dve.event_date, format: '%a - %d/%m/%Y') %>
           </div>
         </div>
         <div class="row">
-          <div class="col m6 s8 offset-s4">
-            <span>Data:</span> <%= @dve.event_date.strftime("%a - %d/%m/%Y") %>
+          <div class="col m6 s6">
+            <span class="field-label">Entrada:</span> <%= @dve.start_day.strftime("%H:%M") %>
           </div>
-          <div class="col m6 s8 offset-s4">
-            <span>Saida: </span> <%= @dve.end_day.strftime("%H:%M") %>
+          <div class="col m6 s6">
+            <span class="field-label">Saida: </span> <%= @dve.end_day.strftime("%H:%M") %>
           </div>
         </div>
-          <% if @dve.second_start.present? && @dve.second_end.present? %>
-            <div class="row">
-              <div class="col m6 s8 offset-s4">
-                <span>Segunda entrada:</span> <%= @dve.second_start.strftime("%H:%M") %>
-              </div>
-              <div class="col m6 s8 offset-s4">
-                <span>Segunda saida: </span> <%= @dve.second_end.strftime("%H:%M") %>
-              </div>
+        <% if @dve.second_start.present? && @dve.second_end.present? %>
+          <div class="row">
+            <div class="col m6 s6">
+              <span class="field-label">Segunda entrada:</span> <%= @dve.second_start.strftime("%H:%M") %>
             </div>
-          <% end %>
-              <div class="row col m6 s8 offset-s4">
-                <hr class="show-red-bar">
-              </div>
-            <div class="row">
-              <div class="col m6 s8 offset-s4">
-                <span>Pernoite:</span>  <%= @dve.overnight ? 'Sim' : 'Não' %>
-              </div>
-              <div class="col m6 s12">
-                <span>Total em dve: </span>R$ <%= @dve.total.to_f %>
-              </div>
+            <div class="col m6 s6">
+              <span class="field-label">Segunda saida: </span> <%= @dve.second_end.strftime("%H:%M") %>
             </div>
-    <%= link_to 'Voltar', root_path %>
+          </div>
+        <% end %>
+        <hr class="show-red-bar">
+        <div class="row">
+          <div class="col m6 s6">
+            <span class="field-label">Pernoite:</span>  <%= @dve.overnight ? 'Sim' : 'Não' %>
+          </div>
+          <div class="col m6 s6">
+            <span class="field-label">Total em dve: </span>R$ <%= @dve.total.to_f %>
+          </div>
+        </div>
+        <%= link_to 'Voltar', root_path %>
       </div>
     </div>
   </div>
