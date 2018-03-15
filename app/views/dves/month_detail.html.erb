@@ -1,0 +1,73 @@
+<h1 class="month-name"><%= I18n.l(Date.parse("1/#{@month}"), format: '%B') %></h1>
+  <div class="card">
+    <%= render 'app_title' %>
+    <div class="card-content">
+      <table class="responsive-table highlight">
+        <thead>
+          <tr>
+          <th>Data</th>
+          <th>Inicio</th>
+          <th>Saida</th>
+          <th>Segundo inicio</th>
+          <th>Segunda saida</th>
+          <th>Tipo do dia</th>
+          <th>pernoite?</th>
+          <th>Valor</th>
+        </tr>
+        </thead>
+        <tbody>
+            <% @month_dves.each do |dve| %>
+              <tr>
+                <td class="dates">
+                  <%= I18n.l(dve.event_date, format:"%a - %d/%m") %>  
+                </td>
+
+                <td class="starts">
+                  <%= dve.start_day.strftime("%H:%M") %>  
+                </td>
+
+                <td class="ends">
+                  <%= dve.end_day.strftime("%H:%M") %>  
+                </td>
+
+                <td class="second_starts">
+                  <% if dve.second_start.present? %>
+                    <%= dve.second_start.strftime("%H:%M") %>
+                  <% end %> 
+                </td>
+
+                <td class="second_ends">
+                  <% if dve.second_end.present? %>
+                    <%= dve.second_end.strftime("%H:%M") %>
+                  <% end %> 
+                </td>
+
+                <td class="day_kind">
+                    <%= dve.day_kind.tr('_',' ') %>
+                </td>
+
+                <td class="overnight">
+
+                    <%= dve.overnight ? 'Sim' : 'Não' %>
+                </td>
+
+                <td class="overnight">
+                    <%= dve.total %>
+                </td>
+              </tr>              
+            <% end %>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="total">Total:</span> <%= @total_month %> </td>
+              </tr>
+        </tbody>
+      </table>
+    <%= link_to 'Voltar', root_path %>
+    </div>
+  </div>

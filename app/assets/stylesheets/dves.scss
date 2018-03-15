@@ -29,7 +29,7 @@ $light-gray: #b3b3b3;
 
 /* TO CENTER */
 .container {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* END TO CENTER*/
@@ -138,3 +138,17 @@ $light-gray: #b3b3b3;
 }
 
 /* END SHOW */
+
+/* MONNTH TOTAL */
+    th {
+        color: red;
+    }
+    
+    .total {
+        color: red;
+    }
+
+    .month-name {
+        color: gray;
+    }
+/* END MONTH */

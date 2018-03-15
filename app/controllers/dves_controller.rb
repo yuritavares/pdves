@@ -1,11 +1,6 @@
 class DvesController < ApplicationController
   def index
-    # @month_dves = Dve.where('event_date >= ? AND event_date <= ?', Date.today.beginning_of_month, Date.today.end_of_month)
-    # @total_month = @month_dves.sum(:total).to_f
-    # @total_count = @month_dves.count
-     
      @month = params[:date].blank? ? Date.today.month : params[:date][:month]
-     print @month
      @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
      end_of_month = @beginning_of_month.end_of_month
      @month_dves = Dve.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month)
@@ -43,6 +38,13 @@ class DvesController < ApplicationController
     @dve = Dve.find_by(params)
   end
 
+  def month_detail
+     @month = params[:month].blank? ? Date.today.month : params[:month]
+     @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
+     end_of_month = @beginning_of_month.end_of_month
+     @month_dves = Dve.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month).order('event_date ASC')
+     @total_month = @month_dves.sum(:total).to_f
+  end
   private
 
   def dve_params
