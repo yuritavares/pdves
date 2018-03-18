@@ -28,9 +28,6 @@ $light-gray: #b3b3b3;
 /* END VARIABLES */
 
 /* TO CENTER */
-.container {
-    margin-top: 20px;
-}
 
 /* END TO CENTER*/
 
@@ -150,5 +147,13 @@ $light-gray: #b3b3b3;
 
     .month-name {
         color: gray;
+    }
+
+    td {
+        text-align: justify ;
+    }
+
+    .redname {
+        color: red;
     }
 /* END MONTH */

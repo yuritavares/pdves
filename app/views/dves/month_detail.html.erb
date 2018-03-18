@@ -8,11 +8,13 @@
           <th>Data</th>
           <th>Inicio</th>
           <th>Saida</th>
-          <th>Segundo inicio</th>
-          <th>Segunda saida</th>
+          <th>2° inicio</th>
+          <th>2° saida</th>
           <th>Tipo do dia</th>
           <th>pernoite?</th>
-          <th>Valor</th>
+          <th>Valor</th> 
+          <th>Editar?</th>
+          <th>Deletar?</th>
         </tr>
         </thead>
         <tbody>
@@ -33,12 +35,16 @@
                 <td class="second_starts">
                   <% if dve.second_start.present? %>
                     <%= dve.second_start.strftime("%H:%M") %>
+                  <% else %>
+                    <span>Não<span>
                   <% end %> 
                 </td>
 
                 <td class="second_ends">
                   <% if dve.second_end.present? %>
                     <%= dve.second_end.strftime("%H:%M") %>
+                  <% else %>
+                    <span>Não<span>
                   <% end %> 
                 </td>
 
@@ -47,27 +53,28 @@
                 </td>
 
                 <td class="overnight">
-
                     <%= dve.overnight ? 'Sim' : 'Não' %>
                 </td>
 
-                <td class="overnight">
-                    <%= dve.total %>
+                <td class="total">
+                  <%= dve.total %>
+                </td>
+
+                <td class="edit">
+                  <%= link_to edit_dfe_path(dve)  do %>
+                     <i class="material-icons">edit</i>
+                  <% end %>
+                </td>
+
+                <td class="delete">
+                  <%= link_to dfe_path(dve), method: :delete, data: { confirm: "Deseja realmente deletar (#{dve.event_name}?)" }  do %>
+                    <i class="material-icons">delete</i>
+                  <% end %>
                 </td>
               </tr>              
             <% end %>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><span class="total">Total:</span> <%= @total_month %> </td>
-              </tr>
         </tbody>
       </table>
-    <%= link_to 'Voltar', root_path %>
+      <%= link_to 'Voltar', root_path %>
     </div>
   </div>

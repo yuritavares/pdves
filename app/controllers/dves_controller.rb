@@ -35,7 +35,24 @@ class DvesController < ApplicationController
   end
 
   def edit
-    @dve = Dve.find_by(params)
+    @dve = Dve.find(params[:id])
+  end
+
+  def update
+    @dve = Dve.find(params[:id])
+
+    if @dve.update(dve_params)
+      redirect_to month_detail_path, notice: 'Dve atualizada com sucesso!'
+    else
+      flash[:alert] = "A erros no preenchimento, não foi possivel atualizar!"
+      render :edit
+    end
+  end
+
+  def destroy
+    @dve = Dve.find(params[:id])
+    @dve.destroy
+    redirect_to month_detail_path, notice: 'Dve deletada com sucesso!'
   end
 
   def month_detail
