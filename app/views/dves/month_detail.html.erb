@@ -61,13 +61,13 @@
                 </td>
 
                 <td class="edit">
-                  <%= link_to edit_dfe_path(dve)  do %>
+                  <%= link_to edit_dve_path(dve)  do %>
                      <i class="material-icons">edit</i>
                   <% end %>
                 </td>
 
                 <td class="delete">
-                  <%= link_to dfe_path(dve), method: :delete, data: { confirm: "Deseja realmente deletar (#{dve.event_name}?)" }  do %>
+                  <%= link_to dve_path(dve), method: :delete, data: { confirm: "Deseja realmente deletar (#{dve.event_name}?)" }  do %>
                     <i class="material-icons">delete</i>
                   <% end %>
                 </td>

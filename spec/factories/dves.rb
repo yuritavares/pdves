@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :dfe, class: 'Dve' do
+  factory :dve, class: 'Dve' do
     event_name "MyString"
     event_date "2018-02-12 13:23:45"
     start_day "2018-02-12 13:23:45"

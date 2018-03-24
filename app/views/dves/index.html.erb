@@ -3,7 +3,7 @@
     <div class="card">
       <%= render 'app_title' %>
       <div class="card-content">
-        <%= form_tag(new_dfe_path, method: 'get') do %>
+        <%= form_tag(new_dve_path, method: 'get') do %>
           <div class="input-field">
             <%= text_field :event_date, params[:event_date], placeholder: "Selecione uma data", 
             class: 'date required form-control picker__input picker__input--active' %>

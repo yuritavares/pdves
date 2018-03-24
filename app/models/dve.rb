@@ -1,5 +1,8 @@
 class Dve < ApplicationRecord
   before_save :calculation
+  
+  belongs_to :user
+  
   validates :event_name, :event_date, :day_kind, presence: true
 
   enum day_kind: %i[Final_de_semana Dia_de_semana Feriado]
