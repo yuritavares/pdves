@@ -6,55 +6,7 @@
           <%= render 'if_dve_exists' %>
         </div>
       <div class="card-content">
-        <%= simple_form_for @dve do |f| %>
-          
-          <div class="row">
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :event_date, class: 'active' %>
-            </div>
-          
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :event_name %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :start_day %>
-            </div>
-
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :end_day %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :second_start %>
-            </div>
-
-            <div class="input-field col l6 m6 s12">
-              <%= f.input :second_end %>
-            </div>
-          </div>
-
-            <div class="row">
-              <div class="input-field col l6 m6 s12">
-                <%= f.input :day_kind %>
-              </div>
-              
-              <div class="switch col l5 offset-l1 m6 s12">
-                <%= f.input :overnight %>
-              </div>
-            </div>
-          <div class="row">
-            <div class="submit col l12 m12 s12">
-              <%= button_tag class: 'waves-effect waves-light btn', id: 'add-dve' do %>
-                Atualizar Dve <i class="material-icons left">add</i>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        <%= render 'dvenew_form' %>
         <%= link_to 'Voltar', root_path %>
       </div>
     </div>
