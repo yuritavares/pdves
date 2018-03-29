@@ -10,9 +10,9 @@ class Dve < ApplicationRecord
   def calculation
     self.total = 0
     self.total += 20.00 if overnight == true
-    self.total += if day_kind == 'Final de semana'
+    self.total += if day_kind == 'Final_de_semana'
                     36.00
-                  elsif day_kind == 'Dia de semana'
+                  elsif day_kind == 'Dia_de_semana'
                     18.00
                   else
                     36.00
