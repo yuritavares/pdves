@@ -1,0 +1,5 @@
+pt-BR:
+ simple_form:
+  error_notification:
+   default_message: "Alguns erros foram encontrados, por favor verifique:"
+# Labels and hints examples

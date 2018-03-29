@@ -10,37 +10,37 @@
           
           <div class="row">
             <div class="input-field col l6 m6 s12">
-              <%= f.input :event_date, class: 'active' %>
+              <%= f.input :event_date, label: false, placeholder: ("Data do Evento") %>
             </div>
           
             <div class="input-field col l6 m6 s12">
-              <%= f.input :event_name %>
+              <%= f.input :event_name, label: false, placeholder: ("Nome do evento") %>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m6 s12">
-              <%= f.input :start_day %>
+              <%= f.input :start_day, label: false, placeholder: ("Entrada") %>
             </div>
 
             <div class="input-field col l6 m6 s12">
-              <%= f.input :end_day %>
+              <%= f.input :end_day, label: false, placeholder: ("Saida") %>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m6 s12">
-              <%= f.input :second_start %>
+              <%= f.input :second_start, label: false, placeholder: ("Segunda entrada") %>
             </div>
 
             <div class="input-field col l6 m6 s12">
-              <%= f.input :second_end %>
+              <%= f.input :second_end, label: false, placeholder: ("Segunda saida") %>
             </div>
           </div>
 
             <div class="row">
               <div class="input-field col l6 m6 s12">
-                <%= f.input :day_kind %>
+                <%= f.input :day_kind, prompt: "Selecione o tipo do dia", label: false %>
               </div>
               
               <div class="switch col l5 offset-l1 m6 s12">

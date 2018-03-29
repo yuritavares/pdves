@@ -1,0 +1,30 @@
+# encoding: UTF-8
+# pt-BR translations for Devise
+pt-BR:
+ devise:
+  confirmations:
+   confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
+   send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
+   send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta."
+  failure:
+   already_authenticated: "Você já está logado."
+   inactive: "Sua conta ainda não foi ativada."
+   invalid: "%{authentication_keys} ou senha inválida."
+   locked: "Sua conta está bloqueada."
+   last_attempt: "Você tem mais uma tentativa antes de bloquear sua conta."
+   not_found_in_database: "%{authentication_keys} ou senha inválida."
+   timeout: "Sua sessão expirou, por favor, efetue login novamente para continuar."
+   unauthenticated: "Para continuar, efetue login ou registre-se."
+   unconfirmed: "Antes de continuar, confirme a sua conta."
+  registrations:
+   destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
+   signed_up: "Cadastro feito com sucesso, você foi logado automaticamente."
+   signed_up_but_inactive: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada."
+   signed_up_but_locked: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta está bloqueada."
+   signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Por favor, abra o link para confirmar a sua conta."
+   update_needs_confirmation: "Você atualizou a sua conta com sucesso, mas o seu novo endereço de e-mail precisa ser confirmado. Por favor, acesse-o e clique no link de confirmação que enviamos."
+   updated: "Sua conta foi atualizada com sucesso."
+  sessions:
+   signed_in: "Login efetuado com sucesso!"
+   signed_out: "Saiu com sucesso."
+   already_signed_out: "Saiu com sucesso."

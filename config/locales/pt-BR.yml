@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     models:
       dve: dve
+      user: usuario
     attributes:
       dve:
         start_day: Entrada
@@ -12,6 +13,10 @@ pt-BR:
         event_date: Data do evento
         overnight: Pernoite
         day_kind: Tipo do dia
+      user:
+        password: Senha
+        password_confirmation: Confirme sua senha
+        remember_me: Lembrar de mim
   event_date: '%d/%m/%Y - %A'
   date:
     order:

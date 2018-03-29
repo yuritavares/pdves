@@ -1,0 +1,30 @@
+<h2 class="month-name">Cadastre-se</h2>
+<div class="row">
+  <div class="col l5 offset-l3 m6 offset-m3 s12">
+    <div class="card">
+      <%= render 'dves/app_title' %>
+        <div class="card-content">
+        <div class="row">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs col l4 offset-l2">
+              <%= f.input :email, required: true, autofocus: true, label: false, placeholder: ("Email") %>
+              <%= f.input :password, required: true, placeholder: ("Senha"), label: false %>
+              <%= f.input :password_confirmation, required: true, label: false, placeholder: ("Confirme sua senha.") %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-actions submit">
+              <%= f.button :submit, "Cadastrar-se" %>
+            </div>
+          <% end %>
+           <div class="links-devise">
+            <%= render "devise/shared/links" %>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
