@@ -11,7 +11,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0'
-gem 'therubyracer', platforms: :ruby   
+gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '>= 1.3.0'
 gem 'simple'
 gem 'materialize-sass'
@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
