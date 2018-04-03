@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 
 group :development, :test do
-  gem 'pry'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
