@@ -4,8 +4,11 @@ FactoryBot.define do
     event_date "2018-02-12 13:23:45"
     start_day "2018-02-12 13:23:45"
     end_day "2018-02-12 13:23:45"
-    total_hours 1
-    ex_time 1
+    second_start "2018-02-12 13:23:45"
+    second_end "2018-02-12 13:23:45"
+    day_kind 'Feriado'
+    total nil
     overnight ""
+    user
   end
 end
