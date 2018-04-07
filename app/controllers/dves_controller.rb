@@ -2,7 +2,7 @@ class DvesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-     @month = params[:date].blank? ? Date.today.month : params[:date][:month]
+     @month = params[:event_date].blank? ? Date.today.month : params[:event_date][:month]
      @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
      end_of_month = @beginning_of_month.end_of_month
      @month_dves = current_user.dves.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month)
@@ -18,7 +18,7 @@ class DvesController < ApplicationController
   def create
     @dve = current_user.dves.new(dve_params)
     @existing_dve = current_user.dves.find_by(event_date: dve_params[:event_date])
-    
+
     if @existing_dve
       render :new
       return
@@ -64,6 +64,7 @@ class DvesController < ApplicationController
      @month_dves = current_user.dves.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month).order('event_date ASC')
      @total_month = @month_dves.sum(:total).to_f
   end
+  
   private
 
   def dve_params
