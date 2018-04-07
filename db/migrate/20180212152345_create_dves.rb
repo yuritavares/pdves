@@ -5,7 +5,7 @@ class CreateDves < ActiveRecord::Migration[5.1]
       t.datetime :event_date
       t.datetime :start_day
       t.datetime :end_day
-      t.integer :total_hours
+      t.integer :total
       t.integer :ex_time
       t.boolean :overnight
 
