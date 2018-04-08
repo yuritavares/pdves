@@ -30,6 +30,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.7'
+  gem 'capybara', '~> 2.4.0'
 end
 
 group :development do
