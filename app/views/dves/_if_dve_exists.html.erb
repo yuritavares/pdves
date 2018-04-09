@@ -1,6 +1,0 @@
-      <% if @existing_dve %>
-        <div class="message">
-          Já existe uma dve para esta data. Deseja editá-la?
-          <%= link_to "Clique aqui", edit_dve_path(@existing_dve, dve: {visible: :true}) %>
-        </div>
-      <% end %>
