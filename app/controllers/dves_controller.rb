@@ -2,7 +2,7 @@ class DvesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-     @month = params[:event_date].blank? ? Date.today.month : params[:event_date][:month]
+     @month = params[:date].blank? ? Date.today.month : params[:date][:month]
      @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
      end_of_month = @beginning_of_month.end_of_month
      @month_dves = current_user.dves.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month)
@@ -24,7 +24,6 @@ class DvesController < ApplicationController
       return
     end
 
-    @dve = current_user.dves.new(dve_params)
     if @dve.save
       redirect_to @dve, notice: 'Dve criada com sucesso!'
     else
@@ -58,13 +57,13 @@ class DvesController < ApplicationController
   end
 
   def month_detail
-     @month = params[:month].blank? ? Date.today.month : params[:month]
-     @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
-     end_of_month = @beginning_of_month.end_of_month
-     @month_dves = current_user.dves.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month).order('event_date ASC')
-     @total_month = @month_dves.sum(:total).to_f
+    @month = params[:month].blank? ? Date.today.month : params[:month]
+    @beginning_of_month = Date.parse("1/#{@month}/#{Date.today.year}").beginning_of_month
+    end_of_month = @beginning_of_month.end_of_month
+    @month_dves = current_user.dves.where('event_date >= ? AND event_date <= ?', @beginning_of_month, end_of_month).order('event_date ASC')
+    @total_month = @month_dves.sum(:total).to_f
   end
-  
+
   private
 
   def dve_params
