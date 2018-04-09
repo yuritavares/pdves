@@ -5,11 +5,11 @@
       <div class="card-content">
         <%= form_tag(new_dve_path, method: 'get') do %>
           <div class="input-field">
-            <%= text_field :event_date, params[:event_date], placeholder: "Selecione uma data", 
+            <%= text_field :event_date, params[:event_date], placeholder: "Selecione uma data",
             class: 'date required form-control picker__input picker__input--active' %>
-          </div> 
+          </div>
           <div class="submit">
-            <%= submit_tag "Cadastrar DVE", 
+            <%= submit_tag "Cadastrar DVE",
             class: 'waves-effect waves-light btn' %>
           </div>
         <% end %>
@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-<div class="row less-margin-bottom"> 
+<div class="row less-margin-bottom">
   <div class="col l6 offset-l3 m6 offset-m3 s12">
     <div class="card">
       <div class="card-content zero-margin-padding-bottom">
@@ -26,7 +26,7 @@
             <%= select_month(@beginning_of_month) %>
           </div>
           <div class="submit">
-            <%= submit_tag "listar valores", 
+            <%= submit_tag "listar valores",
             class: 'waves-effect waves-light btn' %>
           </div>
         <% end %>
