@@ -28,6 +28,8 @@ require 'devise'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  # devise login at capybara
+  config.include Warden::Test::Helpers
   # Shoulds Matchers
   config.include FactoryBot::Syntax::Methods
   Shoulda::Matchers.configure do |config|
