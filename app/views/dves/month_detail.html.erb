@@ -6,6 +6,7 @@
         <thead>
           <tr>
           <th>Data</th>
+          <th>Nome do evento</th>
           <th>Inicio</th>
           <th>Saida</th>
           <th>2° inicio</th>
@@ -22,6 +23,10 @@
               <tr>
                 <td class="dates">
                   <%= I18n.l(dve.event_date, format:"%a - %d/%m") %>
+                </td>
+
+                <td class="event_names">
+                  <%= dve.event_name %>
                 </td>
 
                 <td class="starts">
