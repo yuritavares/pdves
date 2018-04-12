@@ -91,23 +91,23 @@ RSpec.describe DvesController, type: :controller do
         expect(subject).to render_template(:index)
       end
 
-      it 'when there is no event_date params passed the value of @month must be the current month' do
+      it 'when there is no event_date params passed' do
         get :index
         expect(assigns(:month)).to eq(Date.today.month)
       end
 
-      it '@month should have the right month when a event_date is passed' do
+      it 'when a event_date is passed' do
         get :index, params: { event_date: { month: '2' } }
         expect(assigns(:month)).to eq('2')
       end
 
-      it '@total_month should contains the value of dves in that especific month' do
+      it '@total_month' do
         get :index, params: { event_date: { month: '4' } }
 
         expect(assigns(:total_month)).to eq(72)
       end
 
-      it '@total_count should contains total of days with dves' do
+      it '@total_count' do
         get :index, params: { event_date: { month: '4' } }
 
         expect(assigns(:total_count)).to eq(2)
@@ -223,12 +223,12 @@ RSpec.describe DvesController, type: :controller do
 
     context 'GET #month_detail' do
 
-      it 'when there is no event_date params passed the value of @month must be the current month' do
+      it 'when there is no event_date params passed' do
         get :month_detail
         expect(assigns(:month)).to eq(Date.today.month)
       end
 
-      it '@month should have the right month when a event_date is passed' do
+      it '@month check month when a event_date is passed' do
         get :month_detail, params: { month: '2' }
         expect(assigns(:month)).to eq('2')
       end
