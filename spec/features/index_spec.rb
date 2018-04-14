@@ -5,6 +5,9 @@ RSpec.feature "Index", type: :feature do
     user = create(:user)
     login_as(user)
     visit root_path
+
+    dve = create(:dve, event_date: '01/04/2018', day_kind: 'Dia_de_semana', user_id: user.id)
+    dve2 = create(:dve, event_date: '02/04/2018', day_kind: 'Dia_de_semana',  user_id: user.id)
   end
 
   it 'Check the right path' do

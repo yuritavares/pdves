@@ -41,9 +41,9 @@ class DvesController < ApplicationController
 
   def update
     @dve = current_user.dves.find(params[:id])
-
+    month = @dve.event_date.month
     if @dve.update(dve_params)
-      redirect_to month_detail_path, notice: 'Dve atualizada com sucesso!'
+      redirect_to month_detail_path(month: month), notice: 'Dve atualizada com sucesso!'
     else
       flash[:alert] = "A erros no preenchimento, não foi possivel atualizar!"
       render :edit
@@ -52,8 +52,10 @@ class DvesController < ApplicationController
 
   def destroy
     @dve = current_user.dves.find(params[:id])
+    month = @dve.event_date.month
     @dve.destroy
-    redirect_to month_detail_path, notice: 'Dve deletada com sucesso!'
+
+    redirect_to month_detail_path(month: month), notice: 'Dve deletada com sucesso!'
   end
 
   def month_detail

@@ -97,18 +97,18 @@ RSpec.describe DvesController, type: :controller do
       end
 
       it 'when a event_date is passed' do
-        get :index, params: { event_date: { month: '2' } }
+        get :index, params: { date: { month: '2' } }
         expect(assigns(:month)).to eq('2')
       end
 
       it '@total_month' do
-        get :index, params: { event_date: { month: '4' } }
+        get :index, params: { date: { month: '4' } }
 
         expect(assigns(:total_month)).to eq(72)
       end
 
       it '@total_count' do
-        get :index, params: { event_date: { month: '4' } }
+        get :index, params: { date: { month: '4' } }
 
         expect(assigns(:total_count)).to eq(2)
       end
