@@ -15,13 +15,4 @@ RSpec.feature "MonthDetail", type: :feature do
 
       expect(current_path).to eq(edit_dve_path(@dve))
     end
-
-    it 'Delete link' do
-      page.accept_confirm do
-        click_link 'Delete'
-      end
-
-      expect(current_path).to eq("/month_detail?month=#{@month}")
-      expect(page).to_not have_content('MyString')
-    end
 end

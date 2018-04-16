@@ -189,9 +189,10 @@ RSpec.describe DvesController, type: :controller do
           expect(@dve.event_name).to eq('Chimbinha o Jesus das guitarra!')
         end
 
-        it 'redirects to the Dve' do
+        it 'redirects to the month_detail' do
           put :update, params: { id: @dve, dve: new_attributes }
-          expect(response).to redirect_to(:month_detail)
+          month = @dve.event_date.month
+          expect(response).to redirect_to(month_detail_path(month: month))
         end
 
         it 'flash notice' do
@@ -217,7 +218,8 @@ RSpec.describe DvesController, type: :controller do
 
       it 'redirects to the month_detail' do
         delete :destroy, params: { id: @dve.id }
-        expect(response).to redirect_to(:month_detail)
+        month = @dve.event_date.month
+        expect(response).to redirect_to(month_detail_path(month: month))
       end
     end
 
