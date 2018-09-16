@@ -9,14 +9,20 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-      <% flash.each do |key, value| %>
-        <%= content_tag :div, value, class: "#{key} col l7 offset-l3 m6 offset-m3 s12" %>
-      <% end %>
-      </div>
 
-      <%= yield %>
-    </div>
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer>
+       <%= render "shared/footer" %>
+    </footer>
+
   </body>
 </html>
